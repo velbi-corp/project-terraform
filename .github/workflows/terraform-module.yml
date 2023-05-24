@@ -10,7 +10,7 @@ jobs:
     
     steps:
     - name: Connect to Gihub
-      uses: de-vri-es/setup-git-credential@v2
+      uses: de-vri-es/setup-git-credentials@v2
       with:
         credentials: $((secrets.TERRAFORM_TOKEN))
     
@@ -20,7 +20,7 @@ jobs:
     - name: Generate docs
       uses: terraform-docs/gh-actions@v1.0.0
       with:
-        working-dir:
+        working-dir: .
         output-file: README.md
         output-mode: inject
         git-push: "true"
